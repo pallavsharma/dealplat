@@ -1,0 +1,19 @@
+<div class="center-block">
+<div class="form-sign" >
+
+<h2>Please sign in</h2>
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <%= f.input_field :email, :placeholder => "Email address"%>
+ <br/> <%= f.input_field :password, :placeholder => "Password"%>
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.input :remember_me, :as => :boolean, :label => false, :inline_label => true %></div>
+  <% end -%>
+
+  <div><%= f.button :submit, "Sign in", :class=> "btn btn-large btn-primary" %></div>
+
+<% end %>
+
+
+<%= render "users/shared/links" %>
+</div>
+</div>

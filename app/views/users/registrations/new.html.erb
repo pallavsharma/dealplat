@@ -1,0 +1,21 @@
+<div class="center-block">
+<div class="form-sign">
+
+<h2>Sing up</h2>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <%= f.input_field :email, :placeholder => "Email address", :autofocus => true %>
+
+  <br/>
+  <%= f.input_field :password, :placeholder => "Password" %>
+
+  <br/>
+  <%= f.input_field :password_confirmation, :placeholder => "Password confirmation" %>
+
+  <div><%=  f.button :submit, "Sign up", :class=> "btn btn-large btn-primary"  %></div>
+<% end %>
+
+<%= render "users/shared/links" %>
+</div>
+</div>

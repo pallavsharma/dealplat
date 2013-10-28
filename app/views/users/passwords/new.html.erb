@@ -1,0 +1,15 @@
+<div class="center-block">
+<div class="form-sign">
+<h2>Forgot your password?</h2>
+<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+<br />
+  <%= f.input_field :email, :autofocus => true, :placeholder => "Email",:class=>"input-block-level" %>
+
+  <div><%= f.button :submit, "Send me reset password instructions", :class=> "btn btn-default btn-primary" %></div>
+<% end %>
+
+<%= render "users/shared/links" %>
+</div>
+</div>
