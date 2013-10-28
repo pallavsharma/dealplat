@@ -13,7 +13,7 @@
     <![endif]-->
 
 
-    <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true  %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
 
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <!-- Size should be 144 x 144 pixels -->
@@ -36,15 +36,33 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag 'http://maps.google.com/maps/api/js?sensor=true'  %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "backbone_application_includes", :media => "all"  %>
+
+    <script>
+        Dealplat.app             = new Dealplat.Application;
+        Dealplat.app.currentUser = new Dealplat.Models.User(<%= current_user.to_json.html_safe %>);
+    </script>
+
   </head>
-  <body class="main-bg">
+  <body>
+      <div class="container">
+          <div class="container-fluid">
+            <div class="row-fluid">
 
-    <div class="container">
-        <%= bootstrap_flash %>
-        <%= yield %>
+              <div class="span2" id="bb-sidebar">
 
-    </div> <!-- /container -->
+              </div>
 
+              <div class="span10" id="bb-content-view">
+
+              </div>
+
+            </div>
+          </div>
+      </div>
+      <%= javascript_include_tag "backbone_application",          :media => "all"  %>
   </body>
+
+
+
 </html>

@@ -30,6 +30,7 @@ gem "factory_girl_rails"                                   # factory_girl is a f
 gem "database_cleaner"                                     # database clean library
 gem "jquery-fileupload-rails"                              # jquery-fileupload-rails is a library that integrates jQuery File Upload for Rails 3.1 Asset Pipeline
 gem "kaminari", :github => "wbyoung/kaminari"              # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Rails 4
+gem "ejs"
 
 gem "backbone-rails", "1.0.0.1"
 
